@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "just dev",
+      "type": "shell",
+      "command": "just dev",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "just backend",
+      "type": "shell",
+      "command": "just backend",
+      "problemMatcher": []
+    },
+    {
+      "label": "just frontend",
+      "type": "shell",
+      "command": "just frontend",
+      "problemMatcher": []
+    },
+    {
+      "label": "just test",
+      "type": "shell",
+      "command": "just test",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "just build",
+      "type": "shell",
+      "command": "just build",
+      "problemMatcher": []
+    }
+  ]
+}

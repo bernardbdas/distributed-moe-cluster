@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FastAPI Server (distributed-moe-cluster)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.server:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8002",
+        "--reload"
+      ],
+      "jinja": true,
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/local.env"
+    },
+    {
+      "name": "CLI Entrypoint (moe-cluster)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.cli",
+      "args": [
+        "--help"
+      ],
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/local.env"
+    },
+    {
+      "name": "Pytest Suite",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "justMyCode": true
+    }
+  ]
+}

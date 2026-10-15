@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  moe-cluster:
+    build: .
+    container_name: distributed-moe-cluster
+    ports:
+      - "8002:8002"
+    environment:
+      - CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+      - WORLD_SIZE=8
+      - MASTER_PORT=29500
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8002/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
